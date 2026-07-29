@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Working Model — AI, past the hype</title>
+<meta name="description" content="Clear, measured analysis of what each new development in AI really means for how organizations and the people in them work — minus the noise.">
+
+<!-- Social share preview (update the URL + image before launch) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Working Model — AI, past the hype">
+<meta property="og:description" content="The technology was never the hard part. Working out what to actually do is.">
+<meta property="og:url" content="https://YOURDOMAIN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Working Model — AI, past the hype">
+<meta name="twitter:description" content="The technology was never the hard part. Working out what to actually do is.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  :root{
+    --bg:#0E1017; --bg2:#141821; --line:#222835;
+    --text:#F0F1F5; --muted:#8C92A0; --dim:#5C6573;
+    --teal:#1D9E75; --cyan:#22D3EE; --amber:#F59E0B;
+    --maxw:680px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  .twm-root{
+    background:var(--bg); color:var(--text);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+    min-height:100vh; padding:0 24px;
+  }
+  .twm-wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* top bar */
+  .twm-top{display:flex;align-items:center;gap:10px;padding:30px 0 0}
+  .twm-mark{width:26px;height:26px;flex:0 0 auto}
+  .twm-name{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+  /* hero — the signature: hype struck through, replaced by the real question */
+  .twm-hero{padding:84px 0 30px}
+  .twm-eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:26px}
+  .twm-strike{font-size:21px;color:var(--dim);font-weight:400;margin-bottom:14px;position:relative;display:inline-block}
+  .twm-strike span{position:relative}
+  .twm-strike span::after{
+    content:"";position:absolute;left:-2px;top:52%;height:2px;width:0;background:var(--amber);
+    animation:strike .7s cubic-bezier(.5,0,.2,1) .5s forwards}
+  @keyframes strike{to{width:calc(100% + 4px)}}
+  .twm-h1{font-size:40px;line-height:1.12;font-weight:700;letter-spacing:-.02em;
+    opacity:0;transform:translateY(8px);animation:rise .6s ease 1.15s forwards}
+  .twm-h1 .accent{color:var(--cyan)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .twm-sub{font-size:17px;color:var(--muted);margin-top:22px;max-width:560px;
+    opacity:0;animation:fade .6s ease 1.5s forwards}
+  @keyframes fade{to{opacity:1}}
+
+  /* the thesis line */
+  .twm-thesis{border-left:2px solid var(--teal);padding:6px 0 6px 18px;margin:40px 0 0;
+    font-size:16px;color:var(--text)}
+  .twm-thesis b{color:var(--cyan);font-weight:600}
+
+  /* form card */
+  .twm-card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;
+    padding:30px;margin:46px 0 0}
+  .twm-card h2{font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .twm-card p.lede{font-size:14.5px;color:var(--muted);margin-top:8px}
+  .twm-field{margin-top:20px}
+  .twm-label{display:block;font-size:12.5px;letter-spacing:.04em;color:var(--muted);
+    margin-bottom:8px;font-weight:500}
+  .twm-input,.twm-textarea{width:100%;background:var(--bg);border:1px solid var(--line);
+    border-radius:9px;color:var(--text);font:inherit;font-size:15px;padding:13px 14px;
+    transition:border-color .18s,box-shadow .18s}
+  .twm-textarea{resize:vertical;min-height:84px}
+  .twm-input::placeholder,.twm-textarea::placeholder{color:var(--dim)}
+  .twm-input:focus,.twm-textarea:focus{outline:none;border-color:var(--teal);
+    box-shadow:0 0 0 3px rgba(29,158,117,.18)}
+  .twm-btn{margin-top:22px;width:100%;background:var(--teal);color:#04130D;border:none;
+    border-radius:9px;font:inherit;font-size:15px;font-weight:700;letter-spacing:.01em;
+    padding:14px;cursor:pointer;transition:background .18s,transform .06s}
+  .twm-btn:hover{background:#23b386}
+  .twm-btn:active{transform:translateY(1px)}
+  .twm-btn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+  .twm-fineprint{font-size:12px;color:var(--dim);margin-top:14px;text-align:center}
+
+  /* success state */
+  .twm-success{display:none;text-align:center;padding:14px 0}
+  .twm-success .check{width:46px;height:46px;margin:0 auto 16px;display:block}
+  .twm-success h2{font-size:20px}
+  .twm-success p{font-size:14.5px;color:var(--muted);margin-top:10px;max-width:420px;margin-left:auto;margin-right:auto}
+
+  /* secondary: videos */
+  .twm-secondary{margin:40px 0 0;padding-top:30px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .twm-secondary .t{font-size:14.5px;color:var(--muted)}
+  .twm-secondary .t b{color:var(--text);font-weight:600}
+  .twm-watch{font-size:14px;font-weight:600;color:var(--cyan);text-decoration:none;
+    border:1px solid var(--line);border-radius:8px;padding:10px 16px;transition:border-color .18s,color .18s;white-space:nowrap}
+  .twm-watch:hover{border-color:var(--cyan)}
+
+  .twm-foot{padding:54px 0 40px;color:var(--dim);font-size:12.5px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .twm-foot a{color:var(--muted);text-decoration:none}
+  .twm-foot a:hover{color:var(--text)}
+
+  @media (max-width:560px){
+    .twm-h1{font-size:31px} .twm-hero{padding:60px 0 24px}
+    .twm-card{padding:24px}
+  }
+</style>
+
+<div class="twm-root">
+  <div class="twm-wrap">
+
+    <div class="twm-top">
+      <svg class="twm-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#1D9E75" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3.4" fill="#22D3EE"/>
+        <path d="M20 6.5 A13.5 13.5 0 0 1 33.5 20" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="33.5" cy="20" r="2.4" fill="#F59E0B"/>
+      </svg>
+      <span class="twm-name">The Working Model</span>
+    </div>
+
+    <section class="twm-hero">
+      <div class="twm-eyebrow">AI, past the hype</div>
+      <div class="twm-strike"><span>“This changes everything.”</span></div>
+      <h1 class="twm-h1">The technology was never the hard part.<br><span class="accent">Working out what to actually do</span> is.</h1>
+      <p class="twm-sub">Clear, measured analysis of what each new development in AI really means for how organizations and the people in them work — minus the noise.</p>
+
+      <p class="twm-thesis">Every week the feed shouts about what AI <b>can</b> do. Almost no one explains what it takes to make it real — or why that's the part that actually decides whether it matters to you.</p>
+    </section>
+
+    <section class="twm-card" id="card">
+      <div id="formview">
+        <h2>I'm building something for leaders navigating this.</h2>
+        <p class="lede">Register your interest, and tell me what's actually hardest about AI for you right now. Early answers shape what I build — and you'll be first to see it.</p>
+
+        <div class="twm-field">
+          <label class="twm-label" for="email">Email</label>
+          <input class="twm-input" id="email" type="email" placeholder="you@company.com" autocomplete="email"/>
+        </div>
+
+        <div class="twm-field">
+          <label class="twm-label" for="role">Your role <span style="color:var(--dim)">(optional)</span></label>
+          <input class="twm-input" id="role" type="text" placeholder="e.g. CEO, founder, operations lead"/>
+        </div>
+
+        <div class="twm-field">
+          <label class="twm-label" for="need">What's the hardest part of AI for you right now? <span style="color:var(--dim)">(optional, but it helps)</span></label>
+          <textarea class="twm-textarea" id="need" placeholder="The thing you wish someone would just explain clearly…"></textarea>
+        </div>
+
+        <button class="twm-btn" id="submit">Register interest</button>
+        <p class="twm-fineprint">No spam. Occasional updates as this takes shape. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="twm-success" id="successview">
+        <svg class="check" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" stroke="#1D9E75" stroke-width="2"/>
+          <path d="M15 24.5l6 6 12-13" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2>You're on the list.</h2>
+        <p>Thank you — what you shared genuinely shapes what gets built next. Keep an eye on your inbox.</p>
+      </div>
+    </section>
+
+    <section class="twm-secondary">
+      <div class="t">In the meantime — <b>the videos make the case.</b></div>
+      <a class="twm-watch" href="#" id="watch">Watch on YouTube →</a>
+    </section>
+
+    <footer class="twm-foot">
+      <span>© 2026 The Working Model</span>
+      <span><a href="#">YouTube</a> &nbsp;·&nbsp; <a href="#">Contact</a></span>
+    </footer>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  // ====================================================================
+  // FORMSPREE SETUP — replace YOUR_FORM_ID with the ID from your form.
+  // After you create a form at formspree.io, they give you an endpoint like:
+  //   https://formspree.io/f/abcdwxyz
+  // Paste just the part after /f/ below (e.g. "abcdwxyz").
+  var FORMSPREE_ID = "mqeovejw";
+  // ====================================================================
+  var ENDPOINT = "https://formspree.io/f/" + FORMSPREE_ID;
+
+  var submit=document.getElementById('submit');
+  var email=document.getElementById('email');
+  var role=document.getElementById('role');
+  var need=document.getElementById('need');
+  var formview=document.getElementById('formview');
+  var successview=document.getElementById('successview');
+
+  function flag(msg){
+    email.focus();
+    email.style.borderColor='#F59E0B';
+    email.style.boxShadow='0 0 0 3px rgba(245,158,11,.18)';
+    email.placeholder=msg;
+    email.value='';
+  }
+
+  submit.addEventListener('click',function(){
+    var val=(email.value||'').trim();
+    var ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if(!ok){ flag('Enter a valid email to continue'); return; }
+
+    submit.disabled=true;
+    submit.textContent='Sending…';
+
+    fetch(ENDPOINT,{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:(function(){
+        var fd=new FormData();
+        fd.append('email',val);
+        fd.append('role',(role.value||'').trim());
+        fd.append('hardest_part',(need.value||'').trim());
+        return fd;
+      })()
+    }).then(function(r){
+      if(r.ok){
+        formview.style.display='none';
+        successview.style.display='block';
+      }else{
+        submit.disabled=false;
+        submit.textContent='Register interest';
+        flag('Something went wrong — try again');
+      }
+    }).catch(function(){
+      submit.disabled=false;
+      submit.textContent='Register interest';
+      flag('Network error — try again');
+    });
+  });
+
+  email.addEventListener('input',function(){
+    email.style.borderColor='';email.style.boxShadow='';
+  });
+})();
+</script>
+
+</body>
+</html>
