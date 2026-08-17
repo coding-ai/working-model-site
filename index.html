@@ -42,6 +42,12 @@
   .twm-mark{width:26px;height:26px;flex:0 0 auto}
   .twm-name{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
+  .twm-nav{margin-left:auto;display:flex;gap:20px}
+  .twm-nav a{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    color:var(--dim);text-decoration:none;transition:color .18s}
+  .twm-nav a:hover{color:var(--text)}
+  .twm-nav a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
+  
   /* hero — the signature: hype struck through, replaced by the real question */
   .twm-hero{padding:84px 0 30px}
   .twm-eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:26px}
@@ -124,6 +130,9 @@
         <circle cx="33.5" cy="20" r="2.4" fill="#F59E0B"/>
       </svg>
       <span class="twm-name">The Working Model</span>
+      <nav class="twm-nav">
+        <a href="/analysis/">Analysis</a>
+      </nav>
     </div>
 
     <section class="twm-hero">
@@ -176,7 +185,7 @@
 
     <footer class="twm-foot">
       <span>© 2026 The Working Model</span>
-      <span><a href="#">YouTube</a> &nbsp;·&nbsp; <a href="#">Contact</a></span>
+      <span><a href="/analysis/">Analysis</a> &nbsp;·&nbsp; <a href="#">YouTube</a> &nbsp;·&nbsp; <a href="#">Contact</a></span>
     </footer>
 
   </div>
