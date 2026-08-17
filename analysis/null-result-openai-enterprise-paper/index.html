@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The null result in OpenAI's enterprise AI paper — The Working Model</title>
+<meta name="description" content="OpenAI's enterprise telemetry paper reports one coefficient that isn't statistically significant. It's the most useful number in the study.">
+<link rel="canonical" href="https://theworkingmodel.co/analysis/null-result-openai-enterprise-paper/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Working Model">
+<meta property="og:title" content="The null result in OpenAI's enterprise AI paper">
+<meta property="og:description" content="OpenAI's enterprise telemetry paper reports one coefficient that isn't statistically significant. It's the most useful number in the study.">
+<meta property="og:url" content="https://theworkingmodel.co/analysis/null-result-openai-enterprise-paper/">
+<meta property="article:published_time" content="2026-08-14">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The null result in OpenAI's enterprise AI paper">
+<meta name="twitter:description" content="OpenAI's enterprise telemetry paper reports one coefficient that isn't statistically significant. It's the most useful number in the study.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../analysis.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <svg class="twm-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="#1D9E75" stroke-width="2"/>
+        <circle cx="20" cy="20" r="3.4" fill="#22D3EE"/>
+        <path d="M20 6.5 A13.5 13.5 0 0 1 33.5 20" stroke="#22D3EE" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="33.5" cy="20" r="2.4" fill="#F59E0B"/>
+      </svg>
+      <span>The Working Model</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/analysis/" aria-current="page">Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+
+    <div class="article-head">
+      <p class="eyebrow">Hype-o-meter</p>
+      <h1>The null result in OpenAI's enterprise AI paper</h1>
+      <p class="byline">
+        <span>14 August 2026</span>
+        <span class="sep">/</span>
+        <span>6 min read</span>
+      </p>
+    </div>
+
+    <p class="standfirst">OpenAI published a working paper this week with Columbia and Wharton, built on ChatGPT Enterprise telemetry through March 2026. The findings everyone will quote are in the abstract. The one worth your time is a coefficient in Table 2 that the paper reports and then moves past.</p>
+
+    <p>It's a good paper. It's also a vendor publishing data about its own customers, with two co-authors on its payroll, so read it the way you'd read anything else in that category.</p>
+
+    <p>The headline findings are what you'd expect. Usage grew sevenfold. Adopters skew large. Task use is broad rather than concentrated. All plausible, none of it especially surprising.</p>
+
+    <p>What I keep coming back to is elsewhere.</p>
+
+    <p>Among firms that have already adopted, larger headcount predicts lower usage per employee. Fewer messages per head, fewer weekly active users per head, fewer tokens per head, all statistically significant. This is presented, reasonably, as a scaling effect. Big companies dilute.</p>
+
+    <p>But there are four columns in that table, and the fourth is messages per weekly active user.</p>
+
+    <figure class="coef">
+      <figcaption class="coef-cap">Effect of log employment on usage, among adopters</figcaption>
+      <div class="coef-row">
+        <span class="label">Messages per active week, per employee</span>
+        <span class="val">&minus;0.121 <span class="star">&lowast;&lowast;&lowast;</span></span>
+      </div>
+      <div class="coef-row">
+        <span class="label">Weekly active users per employee</span>
+        <span class="val">&minus;0.014 <span class="star">&lowast;&lowast;&lowast;</span></span>
+      </div>
+      <div class="coef-row">
+        <span class="label">Output tokens per employee</span>
+        <span class="val">&minus;0.278 <span class="star">&lowast;&lowast;&lowast;</span></span>
+      </div>
+      <div class="coef-row null-row">
+        <span class="label">Messages per weekly active user</span>
+        <span class="val">&minus;0.002 <span class="ns">n.s.</span></span>
+      </div>
+      <p class="coef-note">Three significant negatives and one null. The null is the one that tells you what to do. Coefficients as reported; check them against the paper before you repeat them.</p>
+    </figure>
+
+    <p>Nothing. Flat. A standard error several times the size of the estimate. A 200,000-person company's engaged AI users are as engaged as a 500-person company's engaged AI users.</p>
+
+    <p>Which means the large-enterprise usage gap has nothing to do with how people use the tool once they're using it. It's entirely a question of how many people are using it at all.</p>
+
+    <p class="pull">If your problem is engagement, you buy training. If your problem is penetration, none of that touches the constraint.</p>
+
+    <p>I don't think this is a small distinction, because the two readings send you to completely different places. If your problem is engagement, you're buying better prompts, better training, better internal evangelism, better use case libraries. That's the entire enablement industry right now. If your problem is penetration, you should be looking at who never logged in a second time and why.</p>
+
+    <p>It's easy to measure the first thing and assume it explains the second. This paper is decent evidence that it doesn't.</p>
+
+    <p>What the data can't tell you is why the non-returners don't return, and that's the question the null result makes urgent. The dataset has no denominator for who was offered a seat and declined it, no record of the second session that never happened. Whatever is happening there is happening before any of the enablement machinery gets a chance to work, which is a fairly awkward finding for an industry that has organised itself almost entirely around the post-onboarding phase.</p>
+
+    <hr class="break">
+
+    <p>The second thing worth sitting with is what predicts adoption in the first place.</p>
+
+    <p>The researchers tested three kinds of accumulated intangible capital, all measured in fiscal 2021, well before any of these firms bought anything: R&amp;D stock per employee, capitalised software per employee, and SG&amp;A stock per employee. SG&amp;A is the crude proxy here for organisational and managerial capability. It came out strongest and most robust. Physical capital intensity ran the other direction, negatively associated with adoption once you control for scale.</p>
+
+    <p>So the firms that moved first weren't the ones with the best engineering or the deepest software estate. They were the ones that had already spent years building the overhead function that redesigns how work happens. The unglamorous layer. The layer that gets cut first in a downturn and that no one puts in an earnings call.</p>
+
+    <p>I find this uncomfortable and probably correct. It's consistent with everything we know about general purpose technologies, and it's consistent with the pattern where the technically strongest organisation in a given industry is frequently not the one that adapts fastest. Capability to absorb is a separate asset from capability to build, and we're not very good at measuring or funding it.</p>
+
+    <p>It also suggests a fairly grim near-term dynamic. If the firms best positioned to absorb this are also the largest and most valuable ones, and the models themselves are broadly available at similar prices to everyone, then general availability doesn't level anything. It widens the gap. The paper says as much, briefly, and then leaves it alone.</p>
+
+    <hr class="break">
+
+    <p>The third piece is the one that changes what I'd want to look at internally.</p>
+
+    <p>Six months after adoption, the intensity gradient by seniority runs the wrong way relative to how most governance is designed. Early-career workers and trainees send roughly eight to nine more messages per week than the average active user at the same firm. Executives, founders and partners send fewer. Analysts and marketing and communications staff also run hot.</p>
+
+    <p>And the task mix splits along the same line. Across the whole sample, the dominant activities are documentation and technical writing — more than half of all active users — technical digital work, and drafting messages. Production. Executives cluster somewhere else: topic overviews, facts and figures, legal and regulatory questions, financial and tax queries. Consumption and synthesis.</p>
+
+    <p>None of that is scandalous on its own. But put it together and the operating picture is that your least experienced people are producing a high volume of written material with model assistance, your most senior people are reading summaries, and the review layer between them was designed for a world where the junior output was slower and more obviously effortful.</p>
+
+    <p>There's a related finding on task risk. Legal, regulatory, financial and tax tasks show up as widespread by user reach but small by message share. A lot of people touch them occasionally. If you're monitoring by volume, which most organisations are because volume is what the admin console gives you, you will sample those categories least and they are the ones where a bad output is most expensive. That's a straightforwardly fixable measurement error and I'd guess it's near-universal.</p>
+
+    <hr class="break">
+
+    <p>Some caveats, because they matter more than usual here.</p>
+
+    <p>Everything above is correlational. The paper is careful about this and I'll be careful too. It measures usage only inside ChatGPT Enterprise: not the API, not internal tooling, not other vendors, not personal accounts. Firms classified as non-adopters may be running heavy AI programmes that this dataset simply cannot see, which attenuates every adopter-versus-non-adopter comparison in the paper. Job titles are point-in-time and incomplete. The financial analysis covers US public companies only, so it tells you nothing about mid-market or private firms. And critically, none of this measures output. Not quality, not revenue, not headcount. Usage is not productivity and the authors never claim it is.</p>
+
+    <p>The framing I'd push back on hardest is the implicit one, which is that more tokens is better. Most of the paper's intensity measures are volume measures. It's entirely possible for a firm to be in the bottom quartile on messages per employee and extracting more value than someone in the top, and nothing in this dataset would distinguish them.</p>
+
+    <p>What the paper does establish, and what I think holds up, is in its conclusion: adoption is only the beginning of deployment. Firms aren't deciding whether to use this anymore. They're working out where it belongs, and that process is slow, organisational, and mostly invisible from outside.</p>
+
+    <p>The gap that opens over the next two years won't come from model access. Everyone has that. It'll come from what happens in the eighteen months after the contract is signed, and almost nobody is measuring that period well enough to know whether they're winning it.</p>
+
+    <p class="source-note">
+      Chatterji, A., Holtz, D., Rakholia, N., Tambe, P., &amp; Weeratunga, G. (2026).
+      <em>How Organizations Use AI: Evidence from ChatGPT.</em> Working paper, 11 August 2026.
+      <a href="https://cdn.openai.com/pdf/how-organizations-use-chatgpt.pdf">PDF</a>
+    </p>
+
+    <!-- ============ WAITLIST ============ -->
+    <section class="waitlist" aria-labelledby="wl-h">
+      <h2 id="wl-h">One of these a week. No hype.</h2>
+      <p>The Working Model reads the research, the filings and the release notes so you don't have to, and tells you what actually changed. Free.</p>
+      <div class="fields">
+        <label class="hp" for="wl-company">Company</label>
+        <input class="hp" id="wl-company" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        <label class="hp" for="wl-email">Email address</label>
+        <input id="wl-email" type="email" placeholder="you@company.com" autocomplete="email" required>
+        <button id="wl-btn" type="button">Join the list</button>
+      </div>
+      <p class="status" id="wl-status" role="status" aria-live="polite"></p>
+    </section>
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>The Working Model — AI, past the hype</span>
+    <span><a href="/">Home</a> &nbsp; <a href="/analysis/">Analysis</a></span>
+  </div>
+</footer>
+
+<script>
+// Same Formspree endpoint as the landing page.
+var FORMSPREE_ID = "mqeovejw";
+
+(function () {
+  var btn    = document.getElementById('wl-btn');
+  var email  = document.getElementById('wl-email');
+  var gotcha = document.getElementById('wl-company');
+  var status = document.getElementById('wl-status');
+
+  function say(msg, state) {
+    status.textContent = msg;
+    if (state) { status.setAttribute('data-state', state); }
+    else { status.removeAttribute('data-state'); }
+  }
+
+  function submit() {
+    if (gotcha.value) { return; }
+    if (!email.checkValidity()) {
+      say('Enter a valid email address.', 'error');
+      email.focus();
+      return;
+    }
+    btn.disabled = true;
+    say('Sending…');
+
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        source: 'analysis: null-result-openai-enterprise-paper'
+      })
+    })
+    .then(function (r) {
+      if (!r.ok) { throw new Error('bad status'); }
+      say('You\u2019re on the list. Check your inbox to confirm.');
+      email.value = '';
+    })
+    .catch(function () {
+      btn.disabled = false;
+      say('That didn\u2019t send. Try again in a moment.', 'error');
+    });
+  }
+
+  btn.addEventListener('click', submit);
+  email.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); submit(); }
+  });
+})();
+</script>
+
+</body>
+</html>
