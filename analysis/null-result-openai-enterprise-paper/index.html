@@ -69,27 +69,29 @@
     <p>But there are four columns in that table, and the fourth is messages per weekly active user.</p>
 
     <figure class="coef">
-      <figcaption class="coef-cap">Effect of log employment on usage, among adopters</figcaption>
+      <figcaption class="coef-cap">Table 2 — effect of lagged log employment on usage, among adopters</figcaption>
       <div class="coef-row">
         <span class="label">Messages per active week, per employee</span>
-        <span class="val">&minus;0.121 <span class="star">&lowast;&lowast;&lowast;</span></span>
+        <span class="val">&minus;0.266 (0.019) <span class="star">&lowast;&lowast;&lowast;</span></span>
       </div>
       <div class="coef-row">
         <span class="label">Weekly active users per employee</span>
-        <span class="val">&minus;0.014 <span class="star">&lowast;&lowast;&lowast;</span></span>
+        <span class="val">&minus;0.032 (0.003) <span class="star">&lowast;&lowast;&lowast;</span></span>
       </div>
       <div class="coef-row">
         <span class="label">Output tokens per employee</span>
-        <span class="val">&minus;0.278 <span class="star">&lowast;&lowast;&lowast;</span></span>
+        <span class="val">&minus;0.667 (0.048) <span class="star">&lowast;&lowast;&lowast;</span></span>
       </div>
       <div class="coef-row null-row">
         <span class="label">Messages per weekly active user</span>
-        <span class="val">&minus;0.002 <span class="ns">n.s.</span></span>
+        <span class="val">&minus;0.002 (0.008) <span class="ns">n.s.</span></span>
       </div>
-      <p class="coef-note">Three significant negatives and one null. The null is the one that tells you what to do. Coefficients as reported; check them against the paper before you repeat them.</p>
+      <p class="coef-note">Standard errors clustered by firm in parentheses; &lowast;&lowast;&lowast; denotes significance at 1%. Three significant negatives and one null. The null is the one that tells you what to do.</p>
     </figure>
 
-    <p>Nothing. Flat. A standard error several times the size of the estimate. A 200,000-person company's engaged AI users are as engaged as a 500-person company's engaged AI users.</p>
+    <p>Nothing. Flat. A standard error four times the size of the estimate. A 200,000-person company's engaged AI users are as engaged as a 500-person company's engaged AI users.</p>
+
+    <p>One honest caveat before I lean on this. That fourth regression has an R&sup2; of 0.100, against 0.36 to 0.48 for the other three. It's a noisier specification, so the null is weaker evidence than a null in a tightly fitted model would be. But the point estimate is essentially zero, not merely imprecise, and the sign flips nothing.</p>
 
     <p>Which means the large-enterprise usage gap has nothing to do with how people use the tool once they're using it. It's entirely a question of how many people are using it at all.</p>
 
